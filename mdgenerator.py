@@ -22,7 +22,7 @@ def validate_leetcode_url(url: str) -> str:
 
 def fetch_problem_data(title_slug: str) -> dict:
     """
-    Obtiene información del problema usando GraphQL.
+    Get problem info from leetcode graphql
     """
 
     query = """
@@ -63,8 +63,8 @@ def fetch_problem_data(title_slug: str) -> dict:
 
 def generate_problem_filename(question_id: str, title_slug: str) -> str:
     """
-    Genera:
-    3121-count-the-number-of-special-characters-ii
+    Generates:
+    number-title_slug
     """
 
     return f"{question_id}-{title_slug}"
@@ -72,7 +72,7 @@ def generate_problem_filename(question_id: str, title_slug: str) -> str:
 
 def generate_markdown(problem_data: dict, original_url: str) -> str:
     """
-    Genera el markdown completo.
+    Get markdown
     """
 
     question_id = problem_data["questionId"]
