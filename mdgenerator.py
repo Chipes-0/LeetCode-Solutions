@@ -1,3 +1,5 @@
+from pathlib import Path
+from datetime import datetime
 import re
 import requests
 
@@ -108,12 +110,20 @@ def main():
         print("\nGenerated filename:")
         print(filename)
 
-        output_file = f"{filename}.md"
+        output_dir = Path("./Solutions", filename)
+        output_dir.mkdir(parents=True, exist_ok=True)
+
+        output_file = Path(output_dir, f"{filename}.md")
 
         with open(output_file, "w", encoding="utf-8") as f:
             f.write(markdown)
 
         print(f"\nMarkdown saved to: {output_file}")
+
+        # Archivo Accepted - YYYY-MM-DD
+        today = datetime.now().strftime("%Y-%m-%d")
+        accepted_file = Path(output_dir, f"Accepted - {today}.py")
+        accepted_file.touch(exist_ok=True)
 
     except Exception as e:
         print(f"Error: {e}")
