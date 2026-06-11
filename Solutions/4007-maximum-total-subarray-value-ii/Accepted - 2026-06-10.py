@@ -1,3 +1,6 @@
+from heapq import heappush, heappop
+from typing import List
+
 class Solution:
     def maxTotalValue(self, nums: List[int], k: int) -> int:
         N = len(nums)
