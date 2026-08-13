@@ -1,5 +1,3 @@
-from typing import List
-
 class Solution:
     def longestRepeating(self, s: str, queryCharacters: str, queryIndices: List[int]) -> List[int]:
         class Node:
@@ -10,18 +8,6 @@ class Solution:
                 self.suffix = suffix
                 self.best = best
                 self.length = length
-
-            def __repr__(self):
-                return (
-                    f"Node("
-                    f"left={self.left_char}, "
-                    f"right={self.right_char}, "
-                    f"prefix={self.prefix}, "
-                    f"suffix={self.suffix}, "
-                    f"best={self.best}, "
-                    f"length={self.length})"
-                )
-            
         
         def merge(a, b):
             val = 0
