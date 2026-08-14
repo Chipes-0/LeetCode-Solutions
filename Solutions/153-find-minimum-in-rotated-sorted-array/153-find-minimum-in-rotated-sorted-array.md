@@ -1,4 +1,7 @@
-<h1>153 - Find Minimum in Rotated Sorted Array</h1><h2>Difficulty: Medium - <a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">find-minimum-in-rotated-sorted-array</a></h2><p>Suppose an array of length <code>n</code> sorted in ascending order is <strong>rotated</strong> between <code>1</code> and <code>n</code> times. For example, the array <code>nums = [0,1,2,4,5,6,7]</code> might become:</p>
+<h1>153 - Find Minimum in Rotated Sorted Array</h1>
+<h2>Difficulty: Medium - <a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array">find-minimum-in-rotated-sorted-array</a></h2> 
+
+<p>Suppose an array of length <code>n</code> sorted in ascending order is <strong>rotated</strong> between <code>1</code> and <code>n</code> times. For example, the array <code>nums = [0,1,2,4,5,6,7]</code> might become:</p>
 
 <ul>
 	<li><code>[4,5,6,7,0,1,2]</code> if it was rotated <code>4</code> times.</li>
@@ -46,3 +49,4 @@
 	<li>All the integers of <code>nums</code> are <strong>unique</strong>.</li>
 	<li><code>nums</code> is sorted and rotated between <code>1</code> and <code>n</code> times.</li>
 </ul>
+ 
