@@ -31,6 +31,7 @@ def fetch_problem_data(title_slug: str) -> dict:
     query selectProblem($titleSlug: String!) {
       question(titleSlug: $titleSlug) {
         questionId
+        questionFrontendId
         title
         titleSlug
         difficulty
@@ -77,13 +78,13 @@ def generate_markdown(problem_data: dict, original_url: str) -> str:
     Get markdown
     """
 
-    question_id = problem_data["questionId"]
+    question_frontend_id = problem_data["questionFrontendId"]
     title = problem_data["title"]
     title_slug = problem_data["titleSlug"]
     difficulty = problem_data["difficulty"]
     content = problem_data["content"]
 
-    markdown = f"""<h1>{question_id} - {title}</h1>
+    markdown = f"""<h1>{question_frontend_id} - {title}</h1>
 <h2>Difficulty: {difficulty} - <a href="{original_url}">{title_slug}</a></h2> 
 
 {content} 
@@ -101,7 +102,7 @@ def main():
         problem_data = fetch_problem_data(title_slug)
 
         filename = generate_problem_filename(
-            problem_data["questionId"],
+            problem_data["questionFrontendId"],
             problem_data["titleSlug"]
         )
 
